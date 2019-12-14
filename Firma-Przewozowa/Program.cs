@@ -19,6 +19,10 @@ namespace Firma_Przewozowa
                 "Aby kontynuować naciśnij dowolny klawisz...");
             Console.ReadKey();
             Console.Clear();
+            Console.Write("Podaj nazwę swojej firmy");
+            string nazwa = Console.ReadLine();
+            Console.Write("Gdzie Twoja firma ma siedzibę? ");
+            string siedziba = Console.ReadLine();
             Console.ReadKey();
         }
     }
