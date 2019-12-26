@@ -26,51 +26,8 @@ namespace Firma_Przewozowa
             Console.ReadKey();
         }
     }
-    public class Firma
-    {
-        public string nazwa;
-        public int budzet;
-        public string siedziba;
-        public Firma(string n, string s)
-        {
-            this.nazwa = n;
-            this.siedziba = s;
-        }
-    }
-    public class Miejscowosc
-    {
-        string nazwa;
-        int odleglosc_km;
-        int czas_przejazdu_h;
-        public Miejscowosc(string n, int o)
-        {
-            this.nazwa = n;
-            this.odleglosc_km = o;
-            this.czas_przejazdu_h = this.odleglosc_km / 60;
-        }
-    }
-    public class Osoba
-    {
-        public string imie;
-        public string nazwisko;
-        public int wiek;
-        public Osoba(string i, string n, int w)
-        {
-            this.imie = i;
-            this.nazwisko = n;
-            this.wiek = w;
-        }
-    }
-    public class Pojazd
-    {
-        public int rocznik;
-        public int ilosc_miejsc;
-        public int przebieg;
-        public Pojazd(int r, int i, int p)
-        {
-            this.rocznik = r;
-            this.ilosc_miejsc = i;
-            this.przebieg = p;
-        }
-    }
+    
+
+
+
 }
