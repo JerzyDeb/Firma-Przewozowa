@@ -10,6 +10,7 @@ namespace Firma_Przewozowa
     {
         static void Main(string[] args)
         {
+            
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("FIRMA PRZEWOZOWA - PROJEKT NA PROGRAMOWANIE OBIEKTOWE. ***JERZY DĘBOWSKI***");
             Console.ForegroundColor = ConsoleColor.White;

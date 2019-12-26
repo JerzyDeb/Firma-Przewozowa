@@ -1,14 +1,21 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Osoba
+namespace Firma_Przewozowa
 {
-    public string imie;
-    public string nazwisko;
-    public int wiek;
-    public Osoba(string i, string n, int w)
+    public class Osoba
     {
-        this.imie = i;
-        this.nazwisko = n;
-        this.wiek = w;
+        public string imie;
+        public string nazwisko;
+        public int wiek;
+        public Osoba(string i, string n, int w)
+        {
+            this.imie = i;
+            this.nazwisko = n;
+            this.wiek = w;
+        }
     }
 }

@@ -1,14 +1,21 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Pojazd
+namespace Firma_Przewozowa
 {
-    public int rocznik;
-    public int ilosc_miejsc;
-    public int przebieg;
-    public Pojazd(int r, int i, int p)
+    public class Pojazd
     {
-        this.rocznik = r;
-        this.ilosc_miejsc = i;
-        this.przebieg = p;
+        public int rocznik;
+        public int ilosc_miejsc;
+        public int przebieg;
+        public Pojazd(int r, int i, int p)
+        {
+            this.rocznik = r;
+            this.ilosc_miejsc = i;
+            this.przebieg = p;
+        }
     }
 }
