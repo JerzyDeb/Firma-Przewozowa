@@ -49,4 +49,16 @@ namespace Firma_Przewozowa
             this.czas_przejazdu_h = this.odleglosc_km / 60;
         }
     }
+    public class Osoba
+    {
+        public string imie;
+        public string nazwisko;
+        public int wiek;
+        public Osoba(string i, string n, int w)
+        {
+            this.imie = i;
+            this.nazwisko = n;
+            this.wiek = w;
+        }
+    }
 }
