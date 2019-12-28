@@ -5,17 +5,30 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Firma_Przewozowa
-{
-    public class Pojazd
+{ 
+    public class Pojazd:IPodroz
     {
+        public string marka;
         public int rocznik;
         public int ilosc_miejsc;
         public int przebieg;
-        public Pojazd(int r, int i, int p)
+        public Kierowca kierowca;
+        public bool CzyZajety;
+        public Pojazd(string m, int r, int i)
         {
+            this.marka = m;
             this.rocznik = r;
             this.ilosc_miejsc = i;
-            this.przebieg = p;
+            this.przebieg = 0;
+        }
+        public void Jedz()
+        {
+            this.CzyZajety = true;
+        }
+        public void Wracaj()
+        {
+            this.CzyZajety = false;
         }
     }
+   
 }

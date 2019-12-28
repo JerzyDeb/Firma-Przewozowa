@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Firma_Przewozowa
 {
-    public class Osoba
+    public abstract class Osoba
     {
         public string imie;
         public string nazwisko;

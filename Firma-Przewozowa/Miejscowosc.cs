@@ -8,9 +8,9 @@ namespace Firma_Przewozowa
 {
     public class Miejscowosc
     {
-        string nazwa;
-        int odleglosc_km;
-        int czas_przejazdu_h;
+        public string nazwa;
+        public int odleglosc_km;
+        public int czas_przejazdu_h;
         public Miejscowosc(string n, int o)
         {
             this.nazwa = n;

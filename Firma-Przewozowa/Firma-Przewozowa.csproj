@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Kierowca.cs" />
+    <Compile Include="IPodroz.cs" />
+    <Compile Include="Sklep.cs" />
     <Compile Include="Firma.cs" />
     <Compile Include="Miejscowosc.cs" />
     <Compile Include="Osoba.cs" />
