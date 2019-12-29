@@ -35,17 +35,17 @@ namespace Firma_Przewozowa
         static Sklep ursus = new Sklep("URSUS BUS", ursus1, ursus2);
         static Sklep nissan = new Sklep("NISSAN", nissan1, nissan2);
         static Sklep mercedes = new Sklep("Mercedes", mercedes1, mercedes2);
-        //Tworzenie pojazdów: 
-        static Pojazd autosan1 = new Pojazd("Autosan H9", 1980, 20);
-        static Pojazd autosan2 = new Pojazd("Autosan A10", 2000,  40);
-        static Pojazd scania1 = new Pojazd("Scania Irizar", 1999, 40);
-        static Pojazd scania2 = new Pojazd("Scania Omniline", 1999, 40);
-        static Pojazd ursus1 = new Pojazd("Ursus Smile", 1999, 40);
-        static Pojazd ursus2 = new Pojazd("Ursus Smile Plus", 1999, 40);
-        static Pojazd nissan1 = new Pojazd("Nissan Clivilian", 1999, 20);
-        static Pojazd nissan2 = new Pojazd("Nissan Coaster", 2010, 60);
-        static Pojazd mercedes1 = new Pojazd("Mercedes Intouro", 2018, 85);
-        static Pojazd mercedes2 = new Pojazd("Merceces Tourismo", 2019, 100);
+        //Tworzenie pojazdów: (nazwa, rocznik, il miejsc, cena,  pojemnosc baku) 
+        static Pojazd autosan1 = new Pojazd("Autosan H9", 1980, 20, 10000, 200);
+        static Pojazd autosan2 = new Pojazd("Autosan A10", 2000,  40, 15000, 350);
+        static Pojazd scania1 = new Pojazd("Scania Irizar", 2008, 42, 16000, 450);
+        static Pojazd scania2 = new Pojazd("Scania Omniline", 2002, 55, 16500, 400);
+        static Pojazd ursus1 = new Pojazd("Ursus Smile", 1999, 46, 20000, 250);
+        static Pojazd ursus2 = new Pojazd("Ursus Smile Plus", 1998, 50, 27500, 350);
+        static Pojazd nissan1 = new Pojazd("Nissan Clivilian", 2000, 20, 11500, 350);
+        static Pojazd nissan2 = new Pojazd("Nissan Coaster", 2010, 60, 50000, 400);
+        static Pojazd mercedes1 = new Pojazd("Mercedes Intouro", 2018, 85, 45000, 550);
+        static Pojazd mercedes2 = new Pojazd("Merceces Tourismo", 2019, 100, 60000, 600);
         static void Main(string[] args)
         {
             //Stworzenie listy pojazdów i uzupełnienie jej:
@@ -81,7 +81,26 @@ namespace Firma_Przewozowa
             string nazwa = Console.ReadLine();
             Console.ReadKey();
             Firma Firma = new Firma(nazwa);
+            Firma.Lista_Pojazdow_Firmy.Add(autosan1);
+            Firma.Lista_Kierowcow_Firmy.Add(kierowca1);
             Console.Write("Twoja firma nazywa się: " + Firma.nazwa + " i ma siedzibę w mieście: " + Firma.siedziba);
+            Console.Clear();
+            Console.Write("Oto Twoje samochody: ");
+            foreach (var item in Firma.Lista_Pojazdow_Firmy)
+            {
+                Console.Write(item.marka +" bak: "+ item.pojemnosc+"\n");
+            }
+            Firma.Lista_Pojazdow_Firmy[0].Jedz(200);
+            foreach (var item in Firma.Lista_Pojazdow_Firmy)
+            {
+                Console.Write(item.marka + " bak: " + item.pojemnosc + "\n");
+            }
+            Firma.Lista_Pojazdow_Firmy[0].Wracaj(200);
+            foreach (var item in Firma.Lista_Pojazdow_Firmy)
+            {
+                Console.Write(item.marka + " bak: " + item.pojemnosc + "\n");
+            }
+            Firma.Lista_Pojazdow_Firmy[0].Zatankuj(20);
             Console.ReadKey();
         }
     }

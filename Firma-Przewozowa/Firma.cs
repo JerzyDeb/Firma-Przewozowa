@@ -13,15 +13,15 @@ public class Firma
         public string siedziba;
         public List<Pojazd> Lista_Pojazdow_Firmy = new List<Pojazd>();
         public List<Kierowca> Lista_Kierowcow_Firmy = new List<Kierowca>();
-        public int cena_za_kilometr;
-        public int cena_za_osobe;
+        public int cena_za_kilometr; //1zł
+        public int cena_za_osobe; //10zł
         public Firma(string n)
         {
             this.nazwa = n;
             this.siedziba = "Warszawa";
             this.Lista_Pojazdow_Firmy = new List<Pojazd>();
             this.Lista_Kierowcow_Firmy = new List<Kierowca>();
-            this.cena_za_kilometr = 2;
+            this.cena_za_kilometr = 1;
             this.cena_za_osobe = 10;
         }
         public void Dodaj_Pojazd(Pojazd p)

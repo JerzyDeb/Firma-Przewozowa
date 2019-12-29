@@ -11,6 +11,8 @@ namespace Firma_Przewozowa
         public string imie;
         public string nazwisko;
         public int wiek;
+        public Pojazd pojazd;
+        public bool CzyZajety;
         public Osoba(string i, string n, int w)
         {
             this.imie = i;
