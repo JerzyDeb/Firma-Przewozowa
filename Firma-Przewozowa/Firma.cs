@@ -18,7 +18,7 @@ public class Firma
         public Firma(string n)
         {
             this.nazwa = n;
-            this.siedziba = "Warszawa";
+            this.siedziba = "WARSZAWA";
             this.Lista_Pojazdow_Firmy = new List<Pojazd>();
             this.Lista_Kierowcow_Firmy = new List<Kierowca>();
             this.cena_za_kilometr = 1;

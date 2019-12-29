@@ -8,6 +8,7 @@ namespace Firma_Przewozowa
 {
     class Program
     {
+        static Miejscowosc miejscowosc0 = new Miejscowosc("WARSZAWA", 0);
         static Miejscowosc miejscowosc1 = new Miejscowosc("Gdańsk", 339);
         static Miejscowosc miejscowosc2 = new Miejscowosc("Kraków", 294);
         static Miejscowosc miejscowosc3 = new Miejscowosc("Gdynia", 439);
@@ -35,17 +36,17 @@ namespace Firma_Przewozowa
         static Sklep ursus = new Sklep("URSUS BUS", ursus1, ursus2);
         static Sklep nissan = new Sklep("NISSAN", nissan1, nissan2);
         static Sklep mercedes = new Sklep("Mercedes", mercedes1, mercedes2);
-        //Tworzenie pojazdów: (nazwa, rocznik, il miejsc, cena,  pojemnosc baku) 
-        static Pojazd autosan1 = new Pojazd("Autosan H9", 1980, 20, 10000, 200);
-        static Pojazd autosan2 = new Pojazd("Autosan A10", 2000,  40, 15000, 350);
-        static Pojazd scania1 = new Pojazd("Scania Irizar", 2008, 42, 16000, 450);
-        static Pojazd scania2 = new Pojazd("Scania Omniline", 2002, 55, 16500, 400);
-        static Pojazd ursus1 = new Pojazd("Ursus Smile", 1999, 46, 20000, 250);
-        static Pojazd ursus2 = new Pojazd("Ursus Smile Plus", 1998, 50, 27500, 350);
-        static Pojazd nissan1 = new Pojazd("Nissan Clivilian", 2000, 20, 11500, 350);
-        static Pojazd nissan2 = new Pojazd("Nissan Coaster", 2010, 60, 50000, 400);
-        static Pojazd mercedes1 = new Pojazd("Mercedes Intouro", 2018, 85, 45000, 550);
-        static Pojazd mercedes2 = new Pojazd("Merceces Tourismo", 2019, 100, 60000, 600);
+        //Tworzenie pojazdów: (nazwa, rocznik, il miejsc, cena,  pojemnosc baku, miejsce postoju(Domyslnie Warszawa) 
+        static Pojazd autosan1 = new Pojazd("autosan","Autosan H9", 1980, 20, 10000, 2, miejscowosc0);
+        static Pojazd autosan2 = new Pojazd("autosan","Autosan A10", 2000,  40, 15000, 350, miejscowosc0);
+        static Pojazd scania1 = new Pojazd("scania","Scania Irizar", 2008, 42, 16000, 450, miejscowosc0);
+        static Pojazd scania2 = new Pojazd("scania","Scania Omniline", 2002, 55, 16500, 400, miejscowosc0);
+        static Pojazd ursus1 = new Pojazd("ursus","Ursus Smile", 1999, 46, 20000, 250, miejscowosc0);
+        static Pojazd ursus2 = new Pojazd("ursus","Ursus Smile Plus", 1998, 50, 27500, 350, miejscowosc0);
+        static Pojazd nissan1 = new Pojazd("nissan","Nissan Clivilian", 2000, 20, 11500, 350, miejscowosc0);
+        static Pojazd nissan2 = new Pojazd("nissan","Nissan Coaster", 2010, 60, 50000, 400, miejscowosc0);
+        static Pojazd mercedes1 = new Pojazd("mercedes","Mercedes Intouro", 2018, 85, 45000, 550, miejscowosc0);
+        static Pojazd mercedes2 = new Pojazd("mercedes","Merceces Tourismo", 2019, 100, 60000, 600, miejscowosc0);
         static void Main(string[] args)
         {
             //Stworzenie listy pojazdów i uzupełnienie jej:
@@ -67,7 +68,7 @@ namespace Firma_Przewozowa
             List<Sklep> Lista_Sklepow = new List<Sklep>();
             Lista_Sklepow.Add(autosan); Lista_Sklepow.Add(scania); Lista_Sklepow.Add(ursus); Lista_Sklepow.Add(nissan);
             Lista_Sklepow.Add(mercedes);
-
+            
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("FIRMA PRZEWOZOWA - PROJEKT NA PROGRAMOWANIE OBIEKTOWE. ***JERZY DĘBOWSKI***");
             Console.ForegroundColor = ConsoleColor.White;
@@ -79,28 +80,14 @@ namespace Firma_Przewozowa
             Console.Clear();
             Console.Write("Podaj nazwę swojej firmy:  ");
             string nazwa = Console.ReadLine();
-            Console.ReadKey();
+            Console.Clear();
             Firma Firma = new Firma(nazwa);
             Firma.Lista_Pojazdow_Firmy.Add(autosan1);
             Firma.Lista_Kierowcow_Firmy.Add(kierowca1);
-            Console.Write("Twoja firma nazywa się: " + Firma.nazwa + " i ma siedzibę w mieście: " + Firma.siedziba);
-            Console.Clear();
-            Console.Write("Oto Twoje samochody: ");
-            foreach (var item in Firma.Lista_Pojazdow_Firmy)
-            {
-                Console.Write(item.marka +" bak: "+ item.pojemnosc+"\n");
-            }
-            Firma.Lista_Pojazdow_Firmy[0].Jedz(200);
-            foreach (var item in Firma.Lista_Pojazdow_Firmy)
-            {
-                Console.Write(item.marka + " bak: " + item.pojemnosc + "\n");
-            }
-            Firma.Lista_Pojazdow_Firmy[0].Wracaj(200);
-            foreach (var item in Firma.Lista_Pojazdow_Firmy)
-            {
-                Console.Write(item.marka + " bak: " + item.pojemnosc + "\n");
-            }
-            Firma.Lista_Pojazdow_Firmy[0].Zatankuj(20);
+            Console.Write("Twoja firma nazywa się: " + Firma.nazwa + " i ma siedzibę w mieście: " + Firma.siedziba+"\n\n");
+            Console.ReadKey();
+            Menu meni = new Menu("meni");
+            meni.glowne(Lista_Kierowcow, Firma.Lista_Pojazdow_Firmy, Lista_Miejscowosci, Lista_Sklepow, Firma);
             Console.ReadKey();
         }
     }
