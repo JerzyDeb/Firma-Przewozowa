@@ -11,6 +11,6 @@ namespace Firma_Przewozowa
         void Jedz(Miejscowosc m);
         void Wracaj(Miejscowosc m);
 
-        void Zatankuj(int ilosc);
+        void Zatankuj();
     }
 }

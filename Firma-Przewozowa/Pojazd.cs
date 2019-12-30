@@ -20,6 +20,7 @@ namespace Firma_Przewozowa
         public bool CzyZajety;
         public int pojemnosc;
         public int stan_paliwa;
+        public Miejscowosc postoj_default = new Miejscowosc("WARSZAWA", 0);
         public Miejscowosc postoj;
         public Pojazd(string m, string mo, int r, int i, int c, int p, Miejscowosc postoj)
         {
@@ -73,34 +74,46 @@ namespace Firma_Przewozowa
                 else
                 {
                     Console.Write("WRACAM DO SIEDZIBY FIRMY");
+                    this.postoj = this.postoj_default;
                     this.CzyZajety = false;
                     this.stan_paliwa -= (m.odleglosc_km / 20);
                 }
             }
         }
-        public void Zatankuj(int ilosc)
+        public void Zatankuj()
         {
+            Console.Write("CENA PALIWA TO 5ZŁ/L. ILE LITRÓW CHCESZ ZATANKOWAĆ? MAKSYMALNIE MOŻESZ " + (this.pojemnosc - this.stan_paliwa) + "L  ");
+            var ilosc = int.Parse(Console.ReadLine());
             if (this.stan_paliwa + ilosc > this.pojemnosc)
             {
-                Console.Write("Nie możesz tyle zatankować. Maksymalna ilość paliwa, którą możesz wlać do baku to: " + (this.pojemnosc - this.stan_paliwa)+"l");
+                Console.Write("NIE MOŻESZ TYLE ZATANKOWAĆ. MAKSYMALNIE MOŻESZ WLAĆ DO BAKU: " + (this.pojemnosc - this.stan_paliwa)+"L ");
             }
             else
             {
-                Console.Write("Zatankowano " + ilosc + "l paliwa. Cena: " + (ilosc * 5) + "zl");
+                Console.Write("ZATANKOWANO " + ilosc + "L PALIWA. CENA: " + (ilosc * 5) + "ZŁ");
                 this.stan_paliwa += ilosc;
             }
         }
-        public void Kup(Firma firma, int cena)
+        public void Kup(Pojazd p, Firma firma)
         {
-            if (firma.budzet < cena)
+            if (firma.budzet < p.cena)
                 Console.Write("Nie stać Cię na ten pojazd");
             else
             {
+                Console.Write("UDAŁO CI SIĘ KUPIĆ POJAZD");
                 firma.budzet -= cena;
+                firma.Lista_Pojazdow_Firmy.Add(p);
             }
         }
         public void Dodaj_Kierowce(Kierowca k)
         {
+            if(this.kierowca != null)
+            {
+                var tmp = this.kierowca;
+                this.kierowca = null;
+                tmp.CzyZajety = false;
+            }
+
             if (k.CzyZajety == true)
             {
                 Console.Write("\nTEN KIEROWCA JEST JUŻ ZAJĘTY");

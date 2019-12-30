@@ -23,6 +23,7 @@ public class Firma
             this.Lista_Kierowcow_Firmy = new List<Kierowca>();
             this.cena_za_kilometr = 1;
             this.cena_za_osobe = 10;
+            this.budzet = 100000;
         }
         public void Dodaj_Pojazd(Pojazd p)
         {

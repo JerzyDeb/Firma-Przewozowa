@@ -30,14 +30,9 @@ namespace Firma_Przewozowa
         static Kierowca kierowca8 = new Kierowca("Piotr", "Kwaśnik", 41, 100, 10);
         static Kierowca kierowca9 = new Kierowca("Bartłomiej", "Zbój", 50 , 120, 15);
         static Kierowca kierowca10 = new Kierowca("Stanisław", "Lubicki", 59 , 450, 30);
-        //Tworzenie sklepów i dodanie do nich pojazdów:
-        static Sklep autosan = new Sklep("AUTOSAN", autosan1, autosan2);
-        static Sklep scania = new Sklep("SCANIA",scania1, scania2);
-        static Sklep ursus = new Sklep("URSUS BUS", ursus1, ursus2);
-        static Sklep nissan = new Sklep("NISSAN", nissan1, nissan2);
-        static Sklep mercedes = new Sklep("Mercedes", mercedes1, mercedes2);
+
         //Tworzenie pojazdów: (nazwa, rocznik, il miejsc, cena,  pojemnosc baku, miejsce postoju(Domyslnie Warszawa) 
-        static Pojazd autosan1 = new Pojazd("autosan","Autosan H9", 1980, 20, 10000, 2, miejscowosc0);
+        static Pojazd autosan1 = new Pojazd("autosan","Autosan H9", 1980, 20, 10000, 20, miejscowosc0);
         static Pojazd autosan2 = new Pojazd("autosan","Autosan A10", 2000,  40, 15000, 350, miejscowosc0);
         static Pojazd scania1 = new Pojazd("scania","Scania Irizar", 2008, 42, 16000, 450, miejscowosc0);
         static Pojazd scania2 = new Pojazd("scania","Scania Omniline", 2002, 55, 16500, 400, miejscowosc0);
@@ -47,6 +42,12 @@ namespace Firma_Przewozowa
         static Pojazd nissan2 = new Pojazd("nissan","Nissan Coaster", 2010, 60, 50000, 400, miejscowosc0);
         static Pojazd mercedes1 = new Pojazd("mercedes","Mercedes Intouro", 2018, 85, 45000, 550, miejscowosc0);
         static Pojazd mercedes2 = new Pojazd("mercedes","Merceces Tourismo", 2019, 100, 60000, 600, miejscowosc0);
+        //Tworzenie sklepów i dodanie do nich pojazdów:
+        static Sklep autosan = new Sklep("AUTOSAN", autosan1, autosan2);
+        static Sklep scania = new Sklep("SCANIA", scania1, scania2);
+        static Sklep ursus = new Sklep("URSUS BUS", ursus1, ursus2);
+        static Sklep nissan = new Sklep("NISSAN", nissan1, nissan2);
+        static Sklep mercedes = new Sklep("Mercedes", mercedes1, mercedes2);
         static void Main(string[] args)
         {
             //Stworzenie listy pojazdów i uzupełnienie jej:

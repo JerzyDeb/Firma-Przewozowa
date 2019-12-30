@@ -15,5 +15,19 @@ namespace Firma_Przewozowa
         }
         public int placa;
         public int lata_doswiadczenia;
+        public void Zatrudnij(Kierowca k,Firma firma)
+        {
+            if (firma.budzet < k.placa)
+            {
+                Console.Write("NIE STAĆ CIĘ NA TEGO PRACOWNIKA");
+            }
+            else
+            {
+                Console.Write("ZATRUDNIONO NOWEGO KIEROWCĘ");
+                firma.budzet -= k.placa;
+                firma.Lista_Kierowcow_Firmy.Add(k);
+            }
+        }
+
     }
 }
