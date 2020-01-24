@@ -8,17 +8,17 @@ namespace Firma_Przewozowa
 {
     class Program
     {
-        static Miejscowosc miejscowosc0 = new Miejscowosc("WARSZAWA", 0);
-        static Miejscowosc miejscowosc1 = new Miejscowosc("Gdańsk", 339);
-        static Miejscowosc miejscowosc2 = new Miejscowosc("Kraków", 294);
-        static Miejscowosc miejscowosc3 = new Miejscowosc("Gdynia", 439);
-        static Miejscowosc miejscowosc4 = new Miejscowosc("Szczecin", 566);
-        static Miejscowosc miejscowosc5 = new Miejscowosc("Opole", 336);
-        static Miejscowosc miejscowosc6 = new Miejscowosc("Białystok", 214);
-        static Miejscowosc miejscowosc7 = new Miejscowosc("Olsztyn", 218);
-        static Miejscowosc miejscowosc8 = new Miejscowosc("Zakopane", 407);
-        static Miejscowosc miejscowosc9 = new Miejscowosc("Wrocław", 354);
-        static Miejscowosc miejscowosc10 = new Miejscowosc("Poznań", 310);
+        static Miejscowosc miejscowosc0 = new Miejscowosc("WARSZAWA", 0,0);
+        static Miejscowosc miejscowosc1 = new Miejscowosc("Gdańsk", 339, 20);
+        static Miejscowosc miejscowosc2 = new Miejscowosc("Kraków", 294, 20);
+        static Miejscowosc miejscowosc3 = new Miejscowosc("Gdynia",439,55);
+        static Miejscowosc miejscowosc4 = new Miejscowosc("Szczecin", 566,40);
+        static Miejscowosc miejscowosc5 = new Miejscowosc("Opole", 300,75);
+        static Miejscowosc miejscowosc6 = new Miejscowosc("Białystok",214,60);
+        static Miejscowosc miejscowosc7 = new Miejscowosc("Olsztyn", 210,22);
+        static Miejscowosc miejscowosc8 = new Miejscowosc("Zakopane",407,33);
+        static Miejscowosc miejscowosc9 = new Miejscowosc("Wrocław",354,50);
+        static Miejscowosc miejscowosc10 = new Miejscowosc("Poznań", 310,100);
         //Tworzenie Kierowców: (imie, nazwisko, wiek, Premia za podpis, doświadczenie)
         static Kierowca kierowca1 = new Kierowca("Jan", "Kowalski", 40, 500, 2);
         static Kierowca kierowca2 = new Kierowca("Zbigniew", "Moczywąs", 55, 100, 10);

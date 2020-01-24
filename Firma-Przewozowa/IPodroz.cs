@@ -8,9 +8,9 @@ namespace Firma_Przewozowa
 {
     interface IPodroz
     {
-        void Jedz(Miejscowosc m);
-        void Wracaj(Miejscowosc m);
+        void Jedz(Firma f,Miejscowosc m);
+        void Wracaj(Firma f,Miejscowosc m);
 
-        void Zatankuj();
+        void Zatankuj(Firma firma);
     }
 }
